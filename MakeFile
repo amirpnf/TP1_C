@@ -1,5 +1,5 @@
 CC=gcc
-CFLAGS= -std=c17 -pedantic -Wall
+CFLAGS= -std=c17 -pedantic -Wall -pg
 BUILD_DIR=build
 SRC_DIR=source
 INC_DIR=include
@@ -9,8 +9,20 @@ NOM_ZIP=TP1_AMIRHOSSEIN_POUYANFAR.zip
 SOURCES=$(wildcard $(SRC_DIR)/*.c)
 HEADERS=$(wildcard $(INC_DIR)/*.h)
 
+all :
+	make mytee
+	make binomial
+	make ppcm
 
 
+mytee:
+	$(CC) $(CFLAGS) -o mytee
 
 
-mytee: $(CC) $(CFLAGS) -o mytee   	
+binomial:
+	$(CC) $(CFLAGS) -o binomial
+
+
+ppcm:
+	$(CC) $(CFLAGS) -o ppcm
+	
